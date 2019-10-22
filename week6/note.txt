@@ -1,0 +1,11 @@
+本次实验主要学习了静态库和动态库
+静态库：
+ar -rc libmytest.a aoprand.o base.o	生成静态库  库的名称是：lib名称.a
+gcc test.c -o localstatictest -L. -lmytest		使用静态库生成可执行文件   -L后面没有空格+静态库所属目录的路径   -l+静态库的名称
+gcc test.c -o remotestatictest -L/home/week6/code/staticlib/ -lmytest -I../staticlib/		-I+.h文件所属目录的路径
+
+动态库：
+gcc -shared -fPIC -o libdylib.so aoprand.c basec	生成动态库
+gcc -o localdytest localdytest.c ./libdylib.so		使用动态库生成可执行文件
+gcc -o remotedytest1 remotedytest1.c  ../dynamiclib/libdylib.so -I../dynamiclib		test文件和动态库文件不在同一个目录下是可执行文件生成的方法
+gcc -rdynamic -o remotedytest2 remotedytest2.c -ldl -I../dynamiclib/	在文件中直接使用动态库，具体代码在week6/code/exam/remotedytest2.c中
