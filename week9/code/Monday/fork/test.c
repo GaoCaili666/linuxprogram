@@ -29,7 +29,7 @@ int main()
 	else
 	{
 		
-		sleep(1);
+		//sleep(1);
 		printf("parent:pid=%d ppid=%d i=%d k=%d global1=%d global2=%d\n",getpid(),getppid(),i,k,global1,global2);
 		
 		printf("parent:pid=%d ppid=%d i=%d k=%d global1=%d global2=%d\n",getpid(),getppid(),i,k,global1,global2);
