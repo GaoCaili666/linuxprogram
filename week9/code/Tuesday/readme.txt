@@ -1,11 +1,12 @@
-1、test1.c测试结果：
+1、atexit()函数在main函数的return和右大括号}之间执行，而且return必须正常退出。__attribute__((constructor))是构造函数，是系统级的，而atexit是用户级的
+test1.c测试结果：
 Running before main
 test1:pid= 13137,ppid= 12349
 1:Running after main
-1:Running after main
-1:Running after main
+2:Running after main
+3:Running after main
 
-2、test2.c和test1.c代码一样，就是再最后加了一个死循环，
+2、test2.c和test1.c代码一样，就是再最后加了一个死循环
 
 3、call1.c用system函数执行test2
 运行结果：
