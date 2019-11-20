@@ -1,0 +1,7 @@
+STAT: 该行程的状态，linux的进程有5种状态：
+D 不可中断 uninterruptible sleep (usually IO)
+R 运行 runnable (on run queue)
+S 中断 sleeping
+T 停止 traced or stopped
+Z 僵死 a defunct (”zombie”) process
+注: 其它状态还包括W(无驻留页), <(高优先级进程), N(低优先级进程), L(内存锁页).
